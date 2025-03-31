@@ -1,11 +1,15 @@
-📌 Descripción
+# Proyecto de Gestión de Menús en PHP con MVC
 
-Este proyecto es un sistema de gestión de menús desarrollado en PHP puro, utilizando una arquitectura básica MVC (Modelo - Vista - Controlador). Permite crear, editar y eliminar menús y submenús, con la posibilidad de asignar un menú padre para estructurar jerárquicamente la información.
+## 📌 Descripción
+Este proyecto es un **sistema de gestión de menús** desarrollado en **PHP puro**, utilizando una arquitectura básica **MVC (Modelo - Vista - Controlador)**. Permite crear, editar y eliminar menús y submenús, con la posibilidad de asignar un menú padre para estructurar jerárquicamente la información.
 
-El enfoque está en mantener una estructura limpia, validaciones robustas y una interfaz amigable utilizando únicamente PHP, HTML y CSS, junto con Font Awesome para los íconos y modales personalizados para mostrar errores.
+El enfoque está en mantener una estructura limpia, validaciones robustas y una interfaz amigable utilizando únicamente **PHP, HTML y CSS**, junto con **Font Awesome** para los íconos y **modales personalizados** para mostrar errores.
 
-📁 Estructura del Proyecto
+---
 
+## 📁 Estructura del Proyecto
+
+```
 project-root/
 ├── config/
 │   └── database.php         # Configuración de la conexión PDO
@@ -27,53 +31,48 @@ project-root/
 │       └── menuView.css     # Estilos de visualización con tabs
 ├── index.php                # Punto de entrada y enrutador principal
 └── README.md                # Documentación del proyecto
+```
 
-🚀 Funcionalidades
+---
 
-Crear, editar y eliminar menús
+## 🚀 Funcionalidades
 
-Cada menú puede tener un menú padre (opcional)
+- Crear, editar y eliminar menús
+- Cada menú puede tener un menú padre (opcional)
+- Modal para mostrar errores de validación
+- Validaciones de campos requeridos y longitudes
+- Celdas clicables para ver detalles del menú y submenús
+- Pestañas para mostrar los menús con submenús
+- Resalta el menú/submenú activo
+- Todo el flujo funciona con PHP puro (sin JavaScript obligatorio)
 
-Modal para mostrar errores de validación
+---
 
-Validaciones de campos requeridos y longitudes
+## 🧠 Detalles Técnicos
 
-Celdas clicables para ver detalles del menú y submenús
+- **Lenguaje**: PHP (con enfoque OOP)
+- **Base de Datos**: MySQL (exportable desde phpMyAdmin)
+- **Estilos**: CSS + Font Awesome para iconos
+- **Validaciones**: Lado del servidor (helpers en `Validator.php`)
+- **Enrutamiento**: Vía `index.php?action=...`
 
-Pestañas para mostrar los menús con submenús
+---
 
-Resalta el menú/submenú activo
+## ✅ Validaciones Incluidas
 
-Todo el flujo funciona con PHP puro (sin JavaScript obligatorio)
+Archivo: `helpers/Validator.php`
 
-🧠 Detalles Técnicos
+- `required($valor, $campo)`
+- `maxLength($valor, $max, $campo)`
+- `isNullOrNumeric($valor, $campo)`
+- `validateMenuForm($datos)` – Validación general del formulario
+- `validateMenuDeletion($hijos)` – Evita eliminar menús con submenús asignados
 
-Lenguaje: PHP (con enfoque OOP)
+---
 
-Base de Datos: MySQL (exportable desde phpMyAdmin)
+## 🗃️ Estructura de la Base de Datos
 
-Estilos: CSS + Font Awesome para iconos
-
-Validaciones: Lado del servidor (helpers en Validator.php)
-
-Enrutamiento: Vía index.php?action=...
-
-✅ Validaciones Incluidas
-
-Archivo: helpers/Validator.php
-
-required($valor, $campo)
-
-maxLength($valor, $max, $campo)
-
-isNullOrNumeric($valor, $campo)
-
-validateMenuForm($datos) – Validación general del formulario
-
-validateMenuDeletion($hijos) – Evita eliminar menús con submenús asignados
-
-🗃️ Estructura de la Base de Datos
-
+```sql
 CREATE TABLE menus (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
@@ -81,15 +80,37 @@ CREATE TABLE menus (
   parent_menu_id INT DEFAULT NULL,
   FOREIGN KEY (parent_menu_id) REFERENCES menus(id) ON DELETE SET NULL
 );
+```
 
-Para exportar: ve a phpMyAdmin > selecciona base de datos > Exportar > Formato SQL
+Para exportar: ve a **phpMyAdmin > selecciona base de datos > Exportar > Formato SQL**
 
-💡 Consejos de Uso
+---
 
-Haz clic en Nombre o Descripción para ver submenús del menú seleccionado.
+## 💡 Consejos de Uso
 
-Si intentas borrar un menú con hijos, se mostrará un modal de error.
+- Haz clic en **Nombre** o **Descripción** para ver submenús del menú seleccionado.
+- Si intentas borrar un menú con hijos, se mostrará un modal de error.
+- El campo descripción tiene mínimo 10 y máximo 150 caracteres.
+- Puedes extender funcionalidades agregando validaciones o helpers personalizados.
 
-El campo descripción tiene mínimo 10 y máximo 150 caracteres.
+---
 
-Puedes extender funcionalidades agregando validaciones o helpers personalizados.
+## 🔄 Mejoras Futuras (Sugeridas)
+
+- Implementar modales dinámicos con JavaScript
+- Agregar filtros y paginación al listado
+- Añadir autenticación de usuarios
+- Mejora de estilos para accesibilidad y responsividad
+
+---
+
+## 🧾 Licencia
+Este proyecto es de libre uso con fines educativos y de aprendizaje.
+
+---
+
+## 🙌 Autor
+**Angel Huberto Pulido Burgos**
+
+Puedes usarlo como base para tus propios proyectos. ¡Forks y Pull Requests son bienvenidos!
+
