@@ -19,12 +19,12 @@ project-root/
 ├── views/
 │   ├── form.php             # Formulario de creación/edición
 │   ├── home.php             # Vista principal de listado de menús
-│   └── details.php             # Vista de detalles del menú con hijos
+│   └── menu.php             # Vista de detalles del menú con hijos
 ├── assets/
 │   └── css/
 │       ├── style.css        # Estilos generales
 │       ├── modalError.css   # Estilos para modales de error
-│       └── details.css     # Estilos de visualización con tabs
+│       └── menuView.css     # Estilos de visualización con tabs
 ├── index.php                # Punto de entrada y enrutador principal
 └── README.md                # Documentación del proyecto
 
