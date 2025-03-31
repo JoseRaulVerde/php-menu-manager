@@ -62,9 +62,6 @@ project-root/
 
 Archivo: `helpers/Validator.php`
 
-- `required($valor, $campo)`
-- `maxLength($valor, $max, $campo)`
-- `isNullOrNumeric($valor, $campo)`
 - `validateMenuForm($datos)` – Validación general del formulario
 - `validateMenuDeletion($hijos)` – Evita eliminar menús con submenús asignados
 
