@@ -44,7 +44,7 @@ project-root/
 - Celdas clicables para ver detalles del menú y submenús
 - Pestañas para mostrar los menús con submenús
 - Resalta el menú/submenú activo
-- Todo el flujo funciona con PHP puro (sin JavaScript obligatorio)
+- Todo el flujo funciona con PHP puro
 
 ---
 
