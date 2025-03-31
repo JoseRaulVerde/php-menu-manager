@@ -1,0 +1,111 @@
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #2c3e50;
+}
+
+ul {
+    list-style: square;
+    padding-left: 20px;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: rgb(70, 134, 252);
+    color: white;
+    margin-top: 20px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+}
+
+.table-header button {
+    background-color: rgb(139, 203, 91);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 0px;
+    border: 1px solid rgb(70, 134, 252);
+    justify-content: center;
+}
+
+.table th.action{
+    min-height: 37px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.table th, .table td {
+    border-bottom: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+}
+.table tbody tr:nth-child(even) {
+    background-color: #edebeb;
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #ffffff; 
+}
+
+
+.table th {
+    background-color: #d3d0d0;
+    font-weight: lighter;
+}
+.icon-buttons {
+    display: flex;
+    justify-content: center;
+}
+
+.icon-buttons {
+    display: inline-flex;
+    padding: 0px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+div.center-actios {
+    justify-content: center;
+    display: flex;
+}
+
+.btn.edit {
+    border-color: black;
+    color: black;
+}
+
+.btn.edit:hover {
+    background-color: #3498db;
+    color: white;
+}
+
+.btn.delete {
+    border-color: black;
+    color: black;
+}
+
+.btn.delete:hover {
+    background-color: #e74c3c;
+    color: white;
+}
+
+
+
